@@ -9,6 +9,6 @@ for (my $i = 0;$i < 10;++$i) {
 }
 use randomnuc;
 use randomposition;
-use mutate;
+use mutate_b;
 exit;
 
