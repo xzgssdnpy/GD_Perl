@@ -144,6 +144,28 @@ sub print_seq {
     print substr($seq,$i,$length),"\n";
   }
 }
+
+
+# revcom
+
+sub revcom {
+  my($dna) = @_;
+  my ($revcom) = reverse($dna);
+  $revcom =~ tr/ACGTacgt/TGCAtgca/;
+  return $revcom;
+}
+
+
+# trans_frame 
+
+sub trans_frame {
+  my($seq,$start,$end) = @_;
+  my $protein;
+  unless($end) {
+    $end = length($seq);
+  }
+  return dna2peptide (substr ($seq,$start - 1,$end - $start + 1));
+}
 1;
 
    
